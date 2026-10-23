@@ -17,11 +17,11 @@ public class PinturaService {
         this.repository = repository;
     }
 
-    public Pintura cadastrar(String titulo, String autor, LocalDate dataCriacao, TipoPintura tipo, int larguraCm, int alturaCm){
+    public Pintura cadastrar(String titulo, String autor, TipoPintura tipo, int larguraCm, int alturaCm){
         Pintura p = new Pintura();
         p.setTitulo(titulo);
         p.setAutor(autor);
-        p.setDataCriacao(dataCriacao);
+        p.setDataCriacao(LocalDate.now());
         p.setTipo(tipo);
         p.setLarguraCm(larguraCm);
         p.setAlturaCm(alturaCm);
@@ -31,4 +31,7 @@ public class PinturaService {
     }
 
 
+    public void editar(long id, Pintura pintura) {
+        repository.editar(id, pintura);
+    }
 }

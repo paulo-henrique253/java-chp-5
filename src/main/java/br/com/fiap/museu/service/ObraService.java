@@ -1,6 +1,7 @@
 package br.com.fiap.museu.service;
 
 import br.com.fiap.museu.model.Obra;
+import br.com.fiap.museu.model.Pintura;
 import br.com.fiap.museu.repository.ObraRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,4 +25,11 @@ public class ObraService {
     }
 
 
+    public Obra buscar(long id) {
+        return repository.buscar(id);
+    }
+
+    public List<Obra> buscarRanking() {
+        return repository.buscarRanking();
+    }
 }
